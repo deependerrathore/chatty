@@ -47,3 +47,8 @@ Route::get('/signout',[
 	'uses' => '\Chatty\Http\Controllers\AuthController@getSignout',
 	'as' => 'auth.signout',
 	]);
+
+Route::get('/search',[
+	'uses' => '\Chatty\Http\Controllers\SearchController@getResults',
+	'as' => 'search.results',
+	]);
