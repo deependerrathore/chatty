@@ -2,7 +2,6 @@
 
 namespace Chatty\Http\Controllers;
 
-use DB;
 use Auth;
 use Chatty\Models\User;
 use Illuminate\Http\Request;
