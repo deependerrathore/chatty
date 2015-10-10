@@ -2,6 +2,7 @@
 
 namespace Chatty\Http\Controllers;
 
+use DB;
 use Auth;
 use Chatty\Models\User;
 use Illuminate\Http\Request;
@@ -21,17 +22,16 @@ class ProfileController extends Controller{
 		return view('profile.edit');
 	}
 	public function postEdit(Request $request){
+
 		$this->validate($request,[
 			'first_name' => 'alpha|max:50',
 			'last_name' => 'alpha|max:50',
 			'location' => 'max:20',
-			'username' => 'unique:users|alpha_dash|max:20',
 			]);
 		
 		Auth::user()->update([
 			'first_name' => $request->input('first_name'),
 			'last_name' => $request->input('last_name'),
-			'username' => $request->input('username'),
 			'location' => $request->input('location'),
 			]);
 		return redirect()->route('profile.edit')

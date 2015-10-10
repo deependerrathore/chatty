@@ -27,13 +27,6 @@
 					</div>
 					
 				</div>
-				<div class="form-group{{ $errors->has('username')? ' has-error':''}}">
-							<label for="username" class="control-label">Username</label>
-							<input type="text" name="username" class="form-control" id="username" value="{{ Request::old('username')?: Auth::user()->username}}">
-							@if ($errors->has('username'))
-								<span class="help-block">{{ $errors->first('username') }}</span>
-							@endif
-				</div>
 							
 				<div class="form-group{{ $errors->has('location')? ' has-error':''}}">
 							<label for="location" class="control-label">Location</label>
