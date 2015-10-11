@@ -88,3 +88,12 @@ Route::get('/friends/accept/{username}',[
 	'as' => 'friend.accept',
 	'middleware' => ['auth'],
 	]);
+
+/*Status*/
+
+
+Route::post('/status',[
+	'uses' => '\Chatty\Http\Controllers\StatusController@postStatus',
+	'as' => 'status.post',
+	'middleware' => ['auth'],
+	]);
